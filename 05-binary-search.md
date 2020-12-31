@@ -41,7 +41,13 @@ print(bisect_left(a, x))  # 정렬을 유지하며 배열 a에 x를 삽입할 �
 print(bisect_right(a, x)) # 정렬을 유지하며 배열 a에 x를 삽입할 가장 오른쪽 인덱스 반환
 ```
 
-## bisect을 사용한 특정 범위에 속하는 데이터 개수 구하기
+## 정렬된 배열에서 특정 수의 개수 구하기
+
+입력
+- 데이터의 수 N, 찾으려는 수 x
+- 리스트
+출력
+- 찾으려는 수의 갯수 
 
 ```py
 from bisect import bisect_left, bisect_right
@@ -103,11 +109,3 @@ while start <= end: #
 
 print(result)
 ```
-
-## 정렬된 배열에서 특정 수의 개수 구하기
-
-입력
-- 데이터의 수 N, 찾으려는 수 x
-- 리스트
-출력
-- 찾으려는 수의 갯수 

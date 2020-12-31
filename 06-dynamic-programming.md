@@ -53,8 +53,6 @@ for i in range(3, n + 1): # 3번 인덱스부터 반복 수행
   memo[i] = memo[i - 1] + memo[i - 2] # 전체 수를 모두 기입
 
 print(memo[n])
-
-et = time.time()
 ```
 
 ## 다이나믹 프로그래밍 vs 분할정복
