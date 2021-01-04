@@ -54,25 +54,22 @@ print(array)
 array = list(map(int, input().split()))
 
 def quick(array, start, end):
-  if start >= end: # 1이면 정렬할 필요 없음
+  if start >= end:
     return
-  pivot = start  # 첫 인덱스를 피봇으로 설정
-  left = start + 1  
-  right = end 
-
+  pivot = start
+  left = start + 1
+  right = end
   while left <= right:
     while left <= end and array[left] <= array[pivot]:
       left += 1
     while right > start and array[pivot] <= array[right]:
       right -= 1
-    if right >= left: # 만나지 않았을 때
-      array[right], array[left] = array[left], array[right]
+    if left <= right:
+      array[left], array[right] = array[right], array[left]
     else:
       array[pivot], array[right] = array[right], array[pivot]
-
-  quick(array, start, right - 1)
+  quick(array, 0, right - 1)
   quick(array, right + 1, end)
-    
 
 quick(array, 0, len(array) - 1)
 print(array)
@@ -105,8 +102,9 @@ print(sorted)
 - 특정 조건 하에서 사용이 가능하지만 매우 빠르게 동작
   - 데이터 크기 범위가 제한되어 일종의 K-V(값 - 갯수)형태로 표현할 수 있을 때
 - 데이터의 개수가 N, 데이터(양수) 중 최대값이 K일 때 O(N + K) 보장
-- 동일한 데이터가 여러 개 등장할 때 효과적
+- **동일한 데이터가 여러 개 등장할 때 효과적**
   - 계수 정렬은 때에 따라서 심각한 비효율성을 초래할 수 있다.
+    - 데이터의 범위가 너무 넓거나(N이 커짐) 특정 영역으로 몰려있을 경우 비효율적
 
 ```py
 array = list(map(int, input().split()))

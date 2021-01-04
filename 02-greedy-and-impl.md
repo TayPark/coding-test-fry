@@ -70,6 +70,25 @@ print(result)
 - 정렬한다.
 - 그룹으로 묶을 때 최소 인원을 채워서 보낸다. 최소 인원은 현재 공포도이다.
 
+```py
+# 모험가 길드
+
+n = int(input())
+array = list(map(int, input.split()))
+array.sort()
+
+result = 0
+count = 0
+
+for i in array:
+  count += 1  # 모험가 추가
+  if count >= i: # 모험가가 공포도보다 많으면
+    result += 1 # 결성
+    count = 0 # 다음 그룹으로
+
+print(result)
+```
+
 # 구현
 
 알고리즘을 소스코드로 바꾸는 과정
@@ -108,25 +127,21 @@ for i in range(4):
 - 이동 계획서를 하나씩 읽으면서 dx, dy를 임시 변수에 저장하고, 맵 밖으로 벗어나면 처리하지 않도록 짠다.
 
 ```py
-n = int(input())          # 맵 사이즈
-plans = input().split()   # 이동 계획
+N = int(input())
+plan = input().split()
 
-x, y = 1, 1               # 현재 위치
+# 상하좌우
+dir = ['U', 'D', 'L', 'R']
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
 
-dx = [0, 0, -1, 1]        # 서, 동, 북, 남 
-dy = [-1, 1, 0, 0]
-move_types = ['L', 'R', 'U', 'D']
+x, y = 1, 1
 
-for plan in plans:
-  for i in range(len(move_types)):
-    if plan == move_types[i]: # 이동 계획을 확인했을 때 맞다면
-      nx = x + dx[i]
-      ny = y + dy[i]
-  
-  if nx < 1 or ny < 1 or nx > n or ny > n:
-    continue
-
-  x, y = nx, ny
+for i in plan:
+  direct = dir.index(i) # 해당 방향으로의 인덱스를 받아와서
+  if 1 <= dx[direct] + x <= 100 and 1 <= dy[direct] + y <= 100: # 범위를 넘지 않으면
+    x += dx[direct] # 좌표 이동
+    y += dy[direct]
 
 print(x, y)
 ```

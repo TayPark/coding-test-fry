@@ -37,8 +37,8 @@ from bisect import bisect_left, bisect_right
 a = [1, 2, 4, 4, 8]
 x = 4
 
-print(bisect_left(a, x))  # 정렬을 유지하며 배열 a에 x를 삽입할 가장 왼쪽 인덱스 반환
-print(bisect_right(a, x)) # 정렬을 유지하며 배열 a에 x를 삽입할 가장 오른쪽 인덱스 반환
+print(bisect_left(a, x))  # 정렬을 유지하며 배열 a에 x를 삽입할 가장 왼쪽 인덱스 반환 - 2
+print(bisect_right(a, x)) # 정렬을 유지하며 배열 a에 x를 삽입할 가장 오른쪽 인덱스 반환 - 4
 ```
 
 ## 정렬된 배열에서 특정 수의 개수 구하기
@@ -52,17 +52,17 @@ print(bisect_right(a, x)) # 정렬을 유지하며 배열 a에 x를 삽입할 �
 ```py
 from bisect import bisect_left, bisect_right
 
-def count_by_range(a, left, right):
-  left_index = bisect_left(a, left)
-  right_index = bisect_right(a, right)
+array = list(map(int, input().split()))
+target = int(input())
+
+array.sort()
+
+def count_num(array, left, right):
+  left_index = bisect_left(array, left)
+  right_index = bisect_right(array, right)
   return right_index - left_index
 
-a = [1, 2, 3, 3, 3, 3, 3, 4, 4, 8, 9]
-
-print(count_by_range(a, 4, 4)) # 값이 4인 데이터 수
-print(a.count(4)) # 사실 이거랑 같다.
-
-print(count_by_range(a, 1, 4))  # 범위에 있는 갯수 출력
+print(count_num(array, 1, 4)) # 1 <= x <= 4 인 x 갯수. 
 ```
 
 ## 파라메트릭 서치

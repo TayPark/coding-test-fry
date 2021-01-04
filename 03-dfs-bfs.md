@@ -122,7 +122,7 @@ visited = [False] * len(graph) # 노드가 N개일 때 숫자를 늘리면된다
 def bfs(graph, node, visited):
   # 최초
   visited[node] = True
-  queue = deque([node])
+  queue = deque([node]) # deque도 리스트이므로 리스트 형태로 초기화
 
   while queue:  # queue가 비어있지 않으면
     v = queue.popleft() # dequeue 한다.
@@ -195,13 +195,11 @@ def bfs(x, y):
 			ny = b + dy[i]
 			if nx < 0 or nx >= n or ny < 0 or ny >= m:	# 경계 밖이면 (n과 m이 밖이므로)
 				continue
-			if graph[nx][ny] == 0:	# 벽이면
-				continue
-			if graph[nx][ny] == 1:	# 갈 수 있는 길이면
-				graph[nx][ny] = graph[a][b] + 1
-				queue.append((nx, ny))
+			if graph[nx][ny] == 1:	# 갈 수 있는 길일때만
+				graph[nx][ny] = graph[a][b] + 1 # 현재 경로값 + 1
+				queue.append((nx, ny))  # queue에 추가(BFS)
 
-	return graph[n-1][m-1]
+	return graph[n-1][m-1]  # 마지막 결과 출력
 
 n, m = map(int, input().split())
 
