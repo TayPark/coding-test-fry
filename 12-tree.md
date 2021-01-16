@@ -49,7 +49,7 @@ def pre_order(node):
 
 def in_order(node):
   if node.left != None:
-    in_order(tree[node.left])
+    in_order(tree[node.left])sudo apt-get update && sudo apt-get install wget ca-certificates
   print(node.data, end=' ')
   if node.right != None:
     in_order(tree[node.right])
