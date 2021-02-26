@@ -33,7 +33,7 @@ print(c)  # 10
   - []
   - [i for i in range(10)]
     - 2차원 리스트를 초기화할 때 효과적
-    - array = [[0] * m for _ in range(n)]: 0원소를 가진 4 X 3 크기의 2차원 리스트 초기화
+    - array = [[0] * m for _ in range(n)]: 0원소를 가진 M X N 크기의 2차원 리스트 초기화
     - `_`: 파이썬에서 반복을 수행하되 반복을 위한 변수의 값을 무시
 ```py
 arr = [i for i in range(5)]   # a = [0, 1, 2, 3, 4]
