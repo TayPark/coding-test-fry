@@ -1,5 +1,5 @@
 ###
-# 캐스팅
+# 캐스팅(변환) -> int(), str()
 ###
 string = '1234'
 print(int(string)) # 숫자 1234
@@ -8,7 +8,7 @@ integer = 1234
 print(str(integer)) # 문자열 1234
 
 ###
-# 최대 최소
+# 최대 최소 -> min(), max()
 ###
 num_list = [1, 2, 3, 4]
 mini = min(num_list)  # 1
@@ -29,6 +29,13 @@ print(num_list) # [0, 1, 2, 3, 4, ...]
 char = 'a'
 if char.isalpha():
   print(True) # True
+
+###
+# 숫자인지 확인
+###
+char = '1'
+if char.isdigit():
+    print(True) # True
 
 ###
 # 리스트를 문자로 합치기
@@ -74,3 +81,19 @@ def gcd(a, b):
 
 def lcm(a, b):
     return a * b / gcd(a, b)
+
+###
+# 치환 -> replace()
+###
+
+a = "1234"
+a.replace("2", "5") # "1534"
+
+###
+# 리스트 인덱스 관련
+###
+
+a = [1, 2, 3, 4]
+print(a.index(3)) # 2
+
+
