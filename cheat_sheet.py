@@ -96,4 +96,11 @@ a.replace("2", "5") # "1534"
 a = [1, 2, 3, 4]
 print(a.index(3)) # 2
 
+###
+# 리스트 중복체크 -> List len과 Set의 len을 비교
+###
 
+a = [1, 2, 3, 3]
+list_has_dup = len(a) == len(set(a))
+
+print(list_has_dup) # False
