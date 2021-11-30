@@ -58,15 +58,15 @@ print(str_arr)  # ['a', 'b', 'c', 'd', 'e']
 ###
 # 표준 입력 처리 
 ###
-# 11 22 33 44 55 를 받는다고 가정
-score_data = list(map(int, input().split())) # [11, 22, 33, 44, 55]
-print(score_data)
-# 3개의 정수를 한번에 a, b, c에 저장
-a, b, c = map(int, input().split())
-print(a, b, c)
-# 101101 -> [1, 0, 1, 1, 0, 1]
-each_num = list(map(int, input()))
-print(each_num)
+# # 11 22 33 44 55 를 받는다고 가정
+# score_data = list(map(int, input().split())) # [11, 22, 33, 44, 55]
+# print(score_data)
+# # 3개의 정수를 한번에 a, b, c에 저장
+# a, b, c = map(int, input().split())
+# print(a, b, c)
+# # 101101 -> [1, 0, 1, 1, 0, 1]
+# each_num = list(map(int, input()))
+# print(each_num)
 
 ###
 # 최소공배수, 최대공약수(LCM, GCD)
@@ -104,3 +104,27 @@ a = [1, 2, 3, 3]
 list_has_dup = len(a) == len(set(a))
 
 print(list_has_dup) # False
+
+###
+# 단어 빈도 체크 -> from collections import Counter
+###
+from typing import Counter
+
+s = 'Hello world!'
+s_freq = Counter(s)
+print(s_freq) # Counter({'l': 3, 'o': 2, 'H': 1, 'e': 1, ' ': 1, 'w': 1, 'r': 1, 'd': 1, '!': 1})
+
+###
+# 가장 많이 등장하는 단어를 tuple로 반환 -> Counter.most_common()
+###
+
+s_freq_sorted = s_freq.most_common()
+print(s_freq_sorted) # [('l', 3), ('o', 2), ('H', 1), ('e', 1), (' ', 1), ('w', 1), ('r', 1), ('d', 1), ('!', 1)]
+
+###
+# zip의 dict 변환
+###
+a = [1, 2, 3]
+b = ['one', 'two', 'three']
+
+print(dict(zip(a, b))) # {1: 'one', 2: 'two', 3: 'three'}
