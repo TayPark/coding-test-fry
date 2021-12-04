@@ -3,8 +3,11 @@ from typing import List
 
 def bubblesort(arr: List[int]):
     """
+    Description
+    -----------
     Bubble sort is an in-place sorting algorithm.
     With 2 for loops, check every adjacent elements, swap if former is bigger
+    Time complexity is O(n^2)
     
     Parameter
     ---------
